@@ -25,7 +25,8 @@ class Database {
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->conn->exec("set names utf8");
         } catch(PDOException $e) {
-            echo "Connection Error: " . $e->getMessage();
+            error_log("Database Connection Error: " . $e->getMessage());
+            echo "Error de conexión a la base de datos. Por favor, contacte al administrador.";
         }
 
         return $this->conn;
@@ -35,12 +36,17 @@ class Database {
      * Execute a query
      */
     public function query($sql, $params = []) {
+        if (!$this->conn) {
+            error_log("Database query attempted without connection");
+            return false;
+        }
+        
         try {
             $stmt = $this->conn->prepare($sql);
             $stmt->execute($params);
             return $stmt;
         } catch(PDOException $e) {
-            echo "Query Error: " . $e->getMessage();
+            error_log("Query Error: " . $e->getMessage());
             return false;
         }
     }
@@ -49,10 +55,21 @@ class Database {
      * Insert data into database
      */
     public function insert($table, $data) {
+        if (!$this->conn) {
+            error_log("Database insert attempted without connection");
+            return false;
+        }
+        
+        // Sanitize table name (alphanumeric and underscores only)
+        if (!preg_match('/^[a-zA-Z0-9_]+$/', $table)) {
+            error_log("Invalid table name: " . $table);
+            return false;
+        }
+        
         $keys = implode(', ', array_keys($data));
         $placeholders = ':' . implode(', :', array_keys($data));
         
-        $sql = "INSERT INTO $table ($keys) VALUES ($placeholders)";
+        $sql = "INSERT INTO `$table` ($keys) VALUES ($placeholders)";
         
         try {
             $stmt = $this->conn->prepare($sql);
@@ -62,7 +79,7 @@ class Database {
             $stmt->execute();
             return $this->conn->lastInsertId();
         } catch(PDOException $e) {
-            echo "Insert Error: " . $e->getMessage();
+            error_log("Insert Error: " . $e->getMessage());
             return false;
         }
     }
@@ -71,12 +88,29 @@ class Database {
      * Select data from database
      */
     public function select($table, $conditions = [], $columns = '*') {
-        $sql = "SELECT $columns FROM $table";
+        if (!$this->conn) {
+            error_log("Database select attempted without connection");
+            return false;
+        }
+        
+        // Sanitize table name (alphanumeric and underscores only)
+        if (!preg_match('/^[a-zA-Z0-9_]+$/', $table)) {
+            error_log("Invalid table name: " . $table);
+            return false;
+        }
+        
+        // For columns, only allow * or alphanumeric with commas, spaces, and underscores
+        if ($columns !== '*' && !preg_match('/^[a-zA-Z0-9_,\s]+$/', $columns)) {
+            error_log("Invalid columns specification: " . $columns);
+            return false;
+        }
+        
+        $sql = "SELECT $columns FROM `$table`";
         
         if (!empty($conditions)) {
             $where = [];
             foreach (array_keys($conditions) as $key) {
-                $where[] = "$key = :$key";
+                $where[] = "`$key` = :$key";
             }
             $sql .= " WHERE " . implode(' AND ', $where);
         }
@@ -89,7 +123,7 @@ class Database {
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch(PDOException $e) {
-            echo "Select Error: " . $e->getMessage();
+            error_log("Select Error: " . $e->getMessage());
             return false;
         }
     }
@@ -98,17 +132,28 @@ class Database {
      * Update data in database
      */
     public function update($table, $data, $conditions) {
+        if (!$this->conn) {
+            error_log("Database update attempted without connection");
+            return false;
+        }
+        
+        // Sanitize table name (alphanumeric and underscores only)
+        if (!preg_match('/^[a-zA-Z0-9_]+$/', $table)) {
+            error_log("Invalid table name: " . $table);
+            return false;
+        }
+        
         $set = [];
         foreach (array_keys($data) as $key) {
-            $set[] = "$key = :$key";
+            $set[] = "`$key` = :$key";
         }
         
         $where = [];
         foreach (array_keys($conditions) as $key) {
-            $where[] = "$key = :where_$key";
+            $where[] = "`$key` = :where_$key";
         }
         
-        $sql = "UPDATE $table SET " . implode(', ', $set) . " WHERE " . implode(' AND ', $where);
+        $sql = "UPDATE `$table` SET " . implode(', ', $set) . " WHERE " . implode(' AND ', $where);
         
         try {
             $stmt = $this->conn->prepare($sql);
@@ -120,7 +165,7 @@ class Database {
             }
             return $stmt->execute();
         } catch(PDOException $e) {
-            echo "Update Error: " . $e->getMessage();
+            error_log("Update Error: " . $e->getMessage());
             return false;
         }
     }
@@ -129,12 +174,23 @@ class Database {
      * Delete data from database
      */
     public function delete($table, $conditions) {
-        $where = [];
-        foreach (array_keys($conditions) as $key) {
-            $where[] = "$key = :$key";
+        if (!$this->conn) {
+            error_log("Database delete attempted without connection");
+            return false;
         }
         
-        $sql = "DELETE FROM $table WHERE " . implode(' AND ', $where);
+        // Sanitize table name (alphanumeric and underscores only)
+        if (!preg_match('/^[a-zA-Z0-9_]+$/', $table)) {
+            error_log("Invalid table name: " . $table);
+            return false;
+        }
+        
+        $where = [];
+        foreach (array_keys($conditions) as $key) {
+            $where[] = "`$key` = :$key";
+        }
+        
+        $sql = "DELETE FROM `$table` WHERE " . implode(' AND ', $where);
         
         try {
             $stmt = $this->conn->prepare($sql);
@@ -143,7 +199,7 @@ class Database {
             }
             return $stmt->execute();
         } catch(PDOException $e) {
-            echo "Delete Error: " . $e->getMessage();
+            error_log("Delete Error: " . $e->getMessage());
             return false;
         }
     }
