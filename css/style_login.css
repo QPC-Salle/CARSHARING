@@ -1,0 +1,242 @@
+.login {
+    background: linear-gradient(180deg,
+            rgba(160, 201, 202, 1) 0%,
+            rgba(80, 100, 100, 1) 84%);
+    width: 100%;
+    min-width: 402px;
+    min-height: 874px;
+    position: relative;
+}
+
+.login .ellipse {
+    top: 579px;
+    left: 62px;
+    width: 277px;
+    height: 70px;
+    border-radius: 138.5px / 35px;
+    position: absolute;
+    background-color: #d9d9d9;
+}
+
+.login .text-wrapper {
+    position: absolute;
+    top: 605px;
+    left: 155px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.login .rectangle {
+    top: 294px;
+    left: 60px;
+    width: 283px;
+    position: absolute;
+    height: 40px;
+    background-color: #d9d9d9;
+}
+
+.login .div {
+    top: 384px;
+    left: 63px;
+    width: 277px;
+    position: absolute;
+    height: 40px;
+    background-color: #d9d9d9;
+}
+
+.login .text-wrapper-2 {
+    position: absolute;
+    top: 260px;
+    left: 60px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.login .text-wrapper-3 {
+    position: absolute;
+    top: 355px;
+    left: 63px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.login .text-wrapper-4 {
+    position: absolute;
+    top: 63px;
+    left: 63px;
+    width: 275px;
+    font-family: "Irish Grover-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.login .pinetools-com {
+    position: absolute;
+    top: 123px;
+    left: 139px;
+    width: 123px;
+    height: 123px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.login .text-wrapper-5 {
+    position: absolute;
+    top: 805px;
+    left: 162px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.login .ellipse-2 {
+    top: 709px;
+    left: 63px;
+    width: 279px;
+    height: 68px;
+    border-radius: 139.5px / 34px;
+    position: absolute;
+    background-color: #d9d9d9;
+}
+
+.login .text-wrapper-6 {
+    position: absolute;
+    top: 731px;
+    left: 138px;
+    width: 134px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+/* Original CSS code should be injected here */
+
+.login-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.login .rectangle,
+.login .div {
+    border: none;
+    padding: 10px;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 16px;
+    color: #000000;
+    outline: none;
+}
+
+.login .rectangle:focus,
+.login .div:focus {
+    outline: 2px solid #4a90e2;
+    outline-offset: 2px;
+}
+
+.login .ellipse {
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.login .ellipse:hover {
+    background-color: #c9c9c9;
+}
+
+.login .ellipse:active {
+    transform: scale(0.98);
+}
+
+.login .ellipse:focus-visible {
+    outline: 2px solid #4a90e2;
+    outline-offset: 4px;
+}
+
+.login .ellipse-2 {
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.login .ellipse-2:hover {
+    background-color: #c9c9c9;
+}
+
+.login .ellipse-2:active {
+    transform: scale(0.98);
+}
+
+.login .ellipse-2:focus-visible {
+    outline: 2px solid #4a90e2;
+    outline-offset: 4px;
+}
+
+.login .text-wrapper-5 {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.login .text-wrapper-5:hover {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+.login .text-wrapper-5:focus-visible {
+    outline: 2px solid #4a90e2;
+    outline-offset: 2px;
+}
+
+.login-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
