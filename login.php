@@ -69,4 +69,4 @@ $registered = isset($_GET['registered']);
 
 </html>
 
-//testestes
+// End of file login.php
