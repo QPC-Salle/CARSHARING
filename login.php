@@ -69,4 +69,4 @@ $registered = isset($_GET['registered']);
 
 </html>
 
-//hola que tal
+//testestes
