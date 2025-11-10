@@ -4,8 +4,8 @@
  * Rellena los valores con tus credenciales locales.
  */
 return [
-    'host' => '127.0.0.1',
+    'host' => 'localhost',
     'dbname' => 'carsharing',
-    'user' => 'dbuser',
-    'pass' => 'dbpass',
+    'user' => 'root',
+    'pass' => ' ',
 ];
