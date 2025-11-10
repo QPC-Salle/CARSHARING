@@ -39,8 +39,13 @@ $registered = isset($_GET['registered']);
 </head>
 
 <body>
+    <header class="login-header">
+        <h1 class="main-title">CarSharing</h1>
+        <img src="img/Logo.png" alt="CarSharing Logo" class="logo">
+    </header>
+
     <main class="container form">
-        <h1>Iniciar sesión</h1>
+        <h2>Iniciar sesión</h2>
         <?php if ($registered): ?>
             <div class="success">Cuenta creada correctamente. Puedes iniciar sesión.</div>
         <?php endif; ?>
@@ -68,5 +73,3 @@ $registered = isset($_GET['registered']);
 </body>
 
 </html>
-
-// End of file login.php

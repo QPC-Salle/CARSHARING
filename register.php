@@ -55,8 +55,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
+    <header class="login-header">
+        <h1 class="main-title">CarSharing</h1>
+        <img src="img/Logo.png" alt="CarSharing Logo" class="logo">
+    </header>
+
     <main class="container form">
-        <h1>Registrarse</h1>
+        <h2>Registrarse</h2>
 
         <?php if (!empty($errors)): ?>
             <div class="errors">

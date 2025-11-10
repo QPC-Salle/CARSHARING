@@ -6,6 +6,6 @@
 return [
     'host' => '127.0.0.1',
     'dbname' => 'carsharing',
-    'user' => 'dbuser',
-    'pass' => 'dbpass',
+    'user' => 'root',
+    'pass' => '',
 ];

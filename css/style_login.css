@@ -3,141 +3,100 @@
             rgba(160, 201, 202, 1) 0%,
             rgba(80, 100, 100, 1) 84%);
     width: 100%;
-    min-width: 402px;
-    min-height: 874px;
-    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
 }
 
 .login .ellipse {
-    top: 579px;
-    left: 62px;
-    width: 277px;
+    width: 400px;
     height: 70px;
-    border-radius: 138.5px / 35px;
-    position: absolute;
+    border-radius: 35px;
     background-color: #d9d9d9;
+    margin: 20px auto;
+    position: relative;
 }
 
 .login .text-wrapper {
     position: absolute;
-    top: 605px;
-    left: 155px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 16px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
+    font-size: 18px;
 }
 
-.login .rectangle {
-    top: 294px;
-    left: 60px;
-    width: 283px;
-    position: absolute;
-    height: 40px;
-    background-color: #d9d9d9;
-}
-
+.login .rectangle,
 .login .div {
-    top: 384px;
-    left: 63px;
-    width: 277px;
-    position: absolute;
-    height: 40px;
+    width: 400px;
+    height: 50px;
     background-color: #d9d9d9;
+    margin: 10px auto;
 }
 
-.login .text-wrapper-2 {
-    position: absolute;
-    top: 260px;
-    left: 60px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-}
-
+.login .text-wrapper-2,
 .login .text-wrapper-3 {
-    position: absolute;
-    top: 355px;
-    left: 63px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .login .text-wrapper-4 {
-    position: absolute;
-    top: 63px;
-    left: 63px;
-    width: 275px;
-    font-family: "Irish Grover-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 40px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
+    font-size: 48px;
+    margin: 20px 0;
 }
 
 .login .pinetools-com {
-    position: absolute;
-    top: 123px;
-    left: 139px;
-    width: 123px;
-    height: 123px;
-    aspect-ratio: 1;
-    object-fit: cover;
-}
-
-.login .text-wrapper-5 {
-    position: absolute;
-    top: 805px;
-    left: 162px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 15px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    display: block;
 }
 
 .login .ellipse-2 {
-    top: 709px;
-    left: 63px;
-    width: 279px;
-    height: 68px;
-    border-radius: 139.5px / 34px;
-    position: absolute;
+    width: 400px;
+    height: 70px;
+    border-radius: 35px;
     background-color: #d9d9d9;
+    margin: 20px auto;
+    position: relative;
+}
+
+.login .text-wrapper-5 {
+    font-size: 16px;
+    margin-top: 20px;
 }
 
 .login .text-wrapper-6 {
     position: absolute;
-    top: 731px;
-    left: 138px;
-    width: 134px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 16px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .login {
+        padding: 20px;
+    }
+
+    .login .rectangle,
+    .login .div,
+    .login .ellipse,
+    .login .ellipse-2 {
+        width: 283px;
+    }
+
+    .login .text-wrapper-4 {
+        font-size: 40px;
+    }
+
+    .login .pinetools-com {
+        width: 123px;
+        height: 123px;
+    }
 }
 
 /* Original CSS code should be injected here */

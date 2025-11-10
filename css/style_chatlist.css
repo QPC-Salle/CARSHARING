@@ -1,0 +1,4 @@
+body { background: #f8f9fa; min-height: 100vh; }
+.list-group-item { border-radius: 0.6rem; margin-bottom: 0.6rem; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+.list-group-item .text-truncate { max-width: 360px; display: block; }
+.list-group-item .fw-bold { font-size: 1rem; }
