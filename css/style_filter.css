@@ -1,0 +1,54 @@
+.filter-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    background: white;
+}
+
+.filter-card .card-body {
+    padding: 1.5rem;
+}
+
+.filter-card .form-control,
+.filter-card .form-label {
+    border-radius: 8px;
+}
+
+.filter-card .form-control {
+    border: 2px solid #e9ecef;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.filter-card .form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.filter-card .btn {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.route-card {
+    border: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.route-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filter-card .row {
+        flex-direction: column;
+    }
+    
+    .filter-card .col-md-6,
+    .filter-card .col-lg-3 {
+        width: 100%;
+    }
+}

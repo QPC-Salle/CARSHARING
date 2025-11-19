@@ -1,0 +1,46 @@
+#map {
+    width: 100%;
+    min-height: 70vh;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    border: 1px solid #e9ecef;
+    background-color: #e8e8e8;
+}
+
+#route-list {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+#route-list .list-group-item {
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    transition: transform .15s ease, box-shadow .15s ease;
+    font-size: 0.9rem;
+}
+
+#route-list .list-group-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    background-color: #f8f9fa;
+}
+
+#debug-info {
+    font-size: 0.8rem;
+    max-height: 150px;
+    overflow-y: auto;
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+}
+
+/* ajustos responsius */
+@media (max-width: 991px) {
+    #map { 
+        height: 50vh !important; 
+        min-height: 50vh;
+    }
+    
+    #route-list {
+        max-height: 40vh;
+    }
+}

@@ -54,18 +54,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!doctype html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Editar Ruta - CarSharing</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/style_mis_rutes.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Les meves rutes - CarSharing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style_global.css">
+    <link rel="stylesheet" href="css/style_mis_rutes_professional.css">
 </head>
 <body class="bg-light">
-<div class="container py-5">
-	<header class="mb-4 text-center">
-		<h1 class="h4">Editar ruta</h1>
-	</header>
+    <?php require_once __DIR__ . '/includes/header.php'; ?>
+
+    <main class="container py-5">
+        <div class="mb-5">
+            <h1 class="mb-1">Editar ruta</h1>
+            <p class="text-muted">Modifica los detalles de tu ruta</p>
+        </div>
 
 	<div class="row justify-content-center">
 		<div class="col-12 col-md-8">
@@ -124,7 +128,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</div>
 		</div>
 	</div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</main>
+
+    <?php require_once __DIR__ . '/includes/footer.php'; ?>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

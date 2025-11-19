@@ -35,16 +35,14 @@ $registered = isset($_GET['registered']);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Iniciar sesión - CarSharing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style_global.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header class="login-header">
-        <h1 class="main-title">CarSharing</h1>
-        <img src="img/Logo.png" alt="CarSharing Logo" class="logo">
-    </header>
-
-    <main class="container form">
+    <main class="container form py-5">
         <h2>Iniciar sesión</h2>
         <?php if ($registered): ?>
             <div class="success">Cuenta creada correctamente. Puedes iniciar sesión.</div>
@@ -70,6 +68,8 @@ $registered = isset($_GET['registered']);
             </div>
         </form>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
